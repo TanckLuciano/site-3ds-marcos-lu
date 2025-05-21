@@ -77,6 +77,28 @@
             box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.2), 0 4px 24px rgba(0, 0, 0, 0.7);
             z-index: 2;
         }
+
+        .img-blur {
+            filter: blur(4px) brightness(0.6);
+        }
+
+        @media (max-width: 767px) {
+            header {
+                height: 60vh !important;
+            }
+
+            .img-blur {
+                object-fit: cover;
+                min-height: 100%;
+                min-width: 100%;
+            }
+
+            header h1,
+            header p,
+            header a {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 
@@ -102,8 +124,21 @@
     </nav>
 
     <!-- Seção Início -->
-    <header id="inicio">
-        <div class="container">
+    <header id="inicio" style="position:relative; height:100vh; overflow:hidden;">
+        <div class="d-flex flex-row w-100 h-100 position-absolute top-0 start-0" style="z-index:0;">
+            <div class="flex-fill h-100">
+                <img src="fort.jpg" alt="Fortnite" class="w-100 h-100 object-fit-cover img-blur">
+            </div>
+            <div class="flex-fill h-100">
+                <img src="iphone-xs-max-valorant-background-1242-x-2688-pbpl467q04epsby5.jpg" alt="Valorant"
+                    class="w-100 h-100 object-fit-cover img-blur">
+            </div>
+            <div class="flex-fill h-100">
+                <img src="Minecraft.png" alt="Minecraft" class="w-100 h-100 object-fit-cover img-blur">
+            </div>
+        </div>
+        <div class="container position-relative d-flex flex-column justify-content-center align-items-center h-100"
+            style="z-index:1;">
             <h1>Seja bem-vindo!</h1>
             <p>Seja bem-vindo à nossa desenvolvedora de games</p>
             <a href="jogos.html" class="btn btn-light mt-3">Conheça nossos jogos</a>
